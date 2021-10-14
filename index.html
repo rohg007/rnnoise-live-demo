@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" href="//www.xiph.org/images/logos/xiph.ico" type="image/x-icon"/>
+    <link rel="stylesheet" title="default demosheet" href="demo.css" type="text/css"/>
+    <!-- <link rel="stylesheet" title="default demosheet" media="print" href="demo_print.css" type="text/css"/> -->
+    <title>RNNoise: Learning Noise Suppression</title>
+    <script src="ffmap.js"></script>
+    <script src="demo.js"></script>
+    <script src="noise.js"></script>
+    <script src="record.js"></script>
+    <!-- <script src="noise.js"></script>
+    <script src="noise_interface.js"></script> -->
+  </head>
+
+  <body onload="init_demo();">
+    <div class="comparison">
+      <div>
+        <p class="compare_label" style="display: inline-block">Suppression algorithm</p>
+        <ul class="algorithm">
+          <li onclick="liveNoiseSuppression(0, this);" id="default_live_noise_suppression">Off</li>
+          <li onclick="liveNoiseSuppression(1, this);">No suppression</li>
+          <li onclick="liveNoiseSuppression(2, this);">RNNoise</li>
+        </ul>
+      </div>
+
+      <p class="compare_label" style="display: inline-block">Noise type</p>
+      <ul class="bitrate">
+        <li onclick="liveNoise(0, this);" id="default_live_noise">None</li>
+        <li onclick="liveNoise(1, this);">White noise</li>
+      </ul>
+    </div>
+
+    <canvas id="source_spectrogram" width="16" height="16"></canvas>
+    <canvas id="destination_spectrogram" width="16" height="16"></canvas>
+  </body>
+</html>
+
